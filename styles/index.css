@@ -1,0 +1,234 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Light Theme */
+
+:root {
+  --background-color: #fcfcfc;
+  --text-primary: #101010;
+  --text-secondary: #454343;
+  --icon-stroke: #454343;
+  --icon-hover-bg: #dfdfdf;
+}
+
+.textarea {
+  --background-textarea: #ffffff;
+  --border-textarea: #d7dade;
+  --border-textarea-focus: #b7bbc2;
+  --border-textarea-active: #454343;
+  --placeholder-textarea: #b7bbc2;
+}
+
+.btn {
+  --background-btn: #544def;
+  --background-btn-hover: #423aee;
+  --box-shadow-btn: rgba(22, 22, 22, 0.1);
+  --border-btn: none;
+}
+
+.card {
+  --background-card: #ffffff;
+  --border-card: #ececec;
+  --box-shadow-card: rgba(0, 0, 0, 0.15);
+}
+
+/* Dark Theme */
+
+html.dark {
+  --background-color: #18191b;
+  --text-primary: #ffffff;
+  --text-secondary: #8a8f98;
+  --icon-stroke: #f0f0f0;
+  --icon-hover-bg: #1e1e21;
+}
+html.dark .textarea {
+  --background-textarea: #18191b;
+  --border-textarea: #2f3237;
+  --border-textarea-hover: #43464c;
+  --border-textarea-active: #60636c;
+  --placeholder-textarea: #4e5156;
+}
+html.dark .btn {
+  --background-btn: #423aee;
+  --background-btn-hover: #544def;
+  --box-shadow-btn: rgba(22, 22, 22, 0.4);
+  --border-btn: 1px solid
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.1) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+}
+html.dark .card {
+  --background-card: #1e1e21;
+  --border-card: #24262a;
+}
+
+/* Generic */
+
+* {
+  letter-spacing: -0.001em;
+}
+
+.flex {
+  display: flex;
+}
+
+button {
+  display: block;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Layout */
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: var(--background-color);
+  color: var(--text-primary);
+  transition: background-color 350ms ease 0s, color 350ms ease 0s;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.header {
+  height: 68px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  justify-content: end;
+  width: 100%;
+}
+
+.header .icon {
+  margin: unset;
+}
+
+/* Components */
+
+/* Btn */
+.btn {
+  background: var(--background-btn);
+  box-shadow: 0px 2px 50px var(--box-shadow-btn);
+  border: var(--border-btn);
+  border-radius: 4px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  height: 44px;
+  margin: 0 auto;
+  padding: 13px 12px;
+  transition: background 0.2s;
+}
+
+.btn:hover,
+.btn:active {
+  background: var(--background-btn-hover);
+}
+
+/* Icon */
+
+.icon {
+  width: 28px;
+  height: 28px;
+  background-color: transparent;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.icon:hover {
+  background-color: var(--icon-hover-bg);
+}
+
+.icon.offset svg path {
+  stroke-dasharray: 69;
+  stroke-dashoffset: 69;
+
+  animation: dash 1s linear forwards;
+}
+
+/* Textarea */
+
+.textarea {
+  background: var(--background-textarea);
+  border: 1px solid var(--border-textarea);
+  border-radius: 4px;
+  color: var(--text-primary);
+  font-size: 15px;
+  font-weight: 400;
+  height: 126px;
+  line-height: 145%;
+  margin: 40px 0 20px;
+  padding: 10px 12px;
+  resize: none;
+  transform: border 0.2s;
+  width: 357px;
+}
+
+.textarea::placeholder {
+  color: var(--placeholder-textarea);
+}
+
+.textarea:hover {
+  border: 1px solid var(--border-textarea-hover);
+}
+
+.textarea:focus {
+  border: 1px solid var(--border-textarea-active);
+  outline: none;
+}
+
+/* Card */
+
+.card {
+  background: var(--background-card);
+  border: 1px solid (--border-card);
+  box-shadow: 0px 5px 20px var(--box-shadow-card);
+  border-radius: 4px;
+  width: 368px;
+  min-height: 120px;
+  padding: 20px;
+}
+
+.card h4 {
+  color: var(--text-secondary);
+  font-size: 12px;
+}
+
+.card h4 img {
+  margin-right: 4px;
+}
+
+.signature {
+  margin-top: 20px;
+}
+
+/* Animations */
+@-webkit-keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
