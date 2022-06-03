@@ -17,7 +17,7 @@
 .textarea {
   --background-textarea: #ffffff;
   --border-textarea: #d7dade;
-  --border-textarea-focus: #b7bbc2;
+  --border-textarea-hover: #b7bbc2;
   --border-textarea-active: #454343;
   --placeholder-textarea: #b7bbc2;
 }
